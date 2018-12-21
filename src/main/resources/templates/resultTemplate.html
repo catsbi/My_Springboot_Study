@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.typeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>testTemplate</title>
+</head>
+<body>
+<table>
+	<tr><th><h2>Test_Info_View</h2></th></tr>
+		<tr th:each="obj:${list}">
+			<td><label>ID:</label></td><td th:text="${obj.id}"></td>
+			<td><label>Name:</label></td><td th:text="${obj.name}"></td>
+		</tr>
+	</th:forEach>
+</table>
+
+</body>
+</html>
