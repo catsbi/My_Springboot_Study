@@ -15,7 +15,7 @@ public class TestController {
     @Autowired
     TestService testService;
     
-    @RequestMapping("/query")
+    @RequestMapping("/")
     public String query(Model model) throws Exception{
         model.addAttribute("list",testService.getAll());
     	return "testTemplate";
