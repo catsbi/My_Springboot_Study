@@ -15,18 +15,6 @@
 	<name>mariaDBTest</name>
 	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
-	<!-- <distributionManagement>
-		<repository>
-			<id>aws-release</id>
-			<name>AWS Release Repository</name>
-			<url>s3://<BUCKET>/release</url>
-		</repository>
-		<snapshotRepository>
-			<id>aws-snapshot</id>
-			<name>AWS Snapshot Repository</name>
-			<url>s3://<BUCKET>/snapshot</url>
-		</snapshotRepository>
-	</distributionManagement> -->
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -84,6 +72,18 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat8-maven-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<url>http://13.125.105.29:8080/manager/text</url>
+					<path>/</path>
+					<server>TomcatServer</server>
+					<username>ubuntu</username>
+					<password>1234</password>
+				</configuration>
 			</plugin>
 		</plugins>
 		<extensions>
