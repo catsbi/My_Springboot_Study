@@ -24,18 +24,18 @@ public class TestController {
     @RequestMapping(value="/input", method = RequestMethod.POST)
     public String input(Model model, @ModelAttribute Test test) throws Exception{
     	testService.insert(test);
-    	return "redirect:/query";
+    	return "redirect:/";
     }
     
     @RequestMapping(value="/delete", method = {RequestMethod.GET,RequestMethod.POST})
     public String delete(Model model, @ModelAttribute Test test) throws Exception{
     	testService.delete(test.getId());
-    	return "redirect:/query";
+    	return "redirect:/";
     }
     
     @RequestMapping(value="/update", method = RequestMethod.POST)
     public String update(Model model, @ModelAttribute Test test) throws Exception{
     	testService.update(test);
-    	return "redirect:/query";
+    	return "redirect:/";
     }
 }
