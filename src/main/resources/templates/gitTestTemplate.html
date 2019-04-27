@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.typeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>testTemplate</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th><h2>Test_Info_View</h2></th>
+    </tr>
+    <tr th:each="obj:${list}">
+        <td><label>ID:</label></td>
+        <td th:text="${obj.id}"></td>
+        <td><label>Name:</label></td>
+        <td th:text="${obj.name}"></td>
+    </tr>
+    </th:forEach>
+</table>
+
+<form action="" id="myForm" method="post">
+    <table>
+        <tr>
+            <th><h2>입력or삭제or변경 테스트</h2></th>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td><input name="id" placeholder="input ID" type="text"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input name="name" placeholder="input Name" type="text"></td>
+        </tr>
+        <tr>
+            <td><input class="btn" id="deleteBtn" name="deleteBtn" type="button" value="Delete"/></td>
+            <td><input class="btn" id="inputBtn" name="inputBtn" type="button" value="Input"/></td>
+            <td><input class="btn" id="updateBtn" name="updateBtn" type="button" value="Update"/></td>
+            <td><input class="btn" id="updateBtn2" name="updateBtn" type="button" value="Update"/></td>
+        </tr>
+    </table>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script th:src="@{static/js/testJs.js}" type="text/javascript"></script>
+</body>
+</html>
